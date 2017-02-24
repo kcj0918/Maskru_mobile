@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MASKRU</string>
+    <string name="title_activity_mask_map">MaskMapActivity</string>
+    <string name="dust_detail">Dust Detail</string>
+    <string name="mask_map">Mask Map</string>
+</resources>
