@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.mask_map:
                 Log.e("mask_map","mask_map_page");
-                Intent maskMap = new Intent(this, MaskMapActivity.class);
+                Intent maskMap = new Intent(this, TestActivity.class);
                 startActivity(maskMap);
                 break;
         }

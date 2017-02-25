@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Rect;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,6 +35,7 @@ import com.nhn.android.mapviewer.overlay.NMapMyLocationOverlay;
 import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
 import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 import com.yapp.maskru_mobile_project.java.NMapCalloutCustomOldOverlay;
+import com.yapp.maskru_mobile_project.java.NMapPOIflagType;
 import com.yapp.maskru_mobile_project.java.NMapViewerResourceProvider;
 
 public class MaskMapActivity extends NMapActivity implements NMapView.OnMapStateChangeListener{
@@ -72,6 +76,10 @@ public class MaskMapActivity extends NMapActivity implements NMapView.OnMapState
 
     private NMapPOIdataOverlay mFloatingPOIdataOverlay;
     private NMapPOIitem mFloatingPOIitem;
+
+
+    //동현
+    private LocationManager lManager;
 
     private static boolean USE_XML_LAYOUT = false;
 
@@ -145,6 +153,38 @@ public class MaskMapActivity extends NMapActivity implements NMapView.OnMapState
         // compass manager
         mMapCompassManager = new NMapCompassManager(this);
 
+
+
+        lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        try {
+            lManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 0, new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    Log.e("lati",location.getLatitude() + "");
+                    Log.e("Longi",location.getLongitude() + "");
+                    showMyLocation(location.getLatitude(), location.getLongitude());
+                }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {
+
+                }
+
+                @Override
+                public void onProviderDisabled(String provider) {
+
+                }
+            });
+        } catch (SecurityException e) {
+            Log.e("ffff","error");
+        }
+
+
         // create my location overlay
         mMyLocationOverlay = mOverlayManager.createMyLocationOverlay(mMapLocationManager, mMapCompassManager);
 
@@ -152,6 +192,29 @@ public class MaskMapActivity extends NMapActivity implements NMapView.OnMapState
 
 //        setContentView(R.layout.activity_mask_map);
     }
+
+    private void showMyLocation(double latitude, double longitude) {
+    NMapViewerResourceProvider mapViewerResourceProvider = null;
+        NMapOverlayManager nMapOverlayManager;
+        mapViewerResourceProvider = new NMapViewerResourceProvider(this);
+        nMapOverlayManager = new NMapOverlayManager(this,mMapView,mapViewerResourceProvider);
+
+        NGeoPoint myPoint = new NGeoPoint(latitude,longitude);
+        int markerId = NMapPOIflagType.PIN;
+        NMapPOIdata poiData = new NMapPOIdata(1,mMapViewerResourceProvider);
+        poiData.beginPOIdata(1);
+        poiData.addPOIitem(myPoint,"good",markerId,0);
+        poiData.endPOIdata();
+        NMapPOIdataOverlay poIdataOverlay = mOverlayManager.createPOIdataOverlay(poiData,null);
+        NMapController controller = mMapView.getMapController();
+        controller.animateTo(myPoint);
+
+    }
+
+
+
+
+
 
     @Override
     public void onMapInitHandler(NMapView nMapView, NMapError nMapError) {
@@ -184,6 +247,7 @@ public class MaskMapActivity extends NMapActivity implements NMapView.OnMapState
     public void onAnimationStateChange(NMapView nMapView, int i, int i1) {
 
     }
+
 
     /**
      * Container view class to rotate map view.
