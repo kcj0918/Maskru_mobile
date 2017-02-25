@@ -1,14 +1,13 @@
 package com.yapp.maskru_mobile_project;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-public class MaskMapActivity extends AppCompatActivity {
+public class GuideActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mask_map);
+        setContentView(R.layout.activity_guide);
     }
-
 }

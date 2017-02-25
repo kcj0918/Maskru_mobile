@@ -13,6 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             //카드 1
             <LinearLayout
                 android:layout_width="match_parent"
@@ -22,14 +23,12 @@
                 android:layout_marginTop="5dp"
                 android:background="#DFDFDF"
                 android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="horizontal"
                     android:padding="5dp">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -39,12 +38,10 @@
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"/>
-
                     <View
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"/>
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -56,26 +53,23 @@
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"/>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="5dp">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
-
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:gravity="center_horizontal"
-                            android:src="@mipmap/ic_launcher"/>
-
+                            android:src="@mipmap/ic_launcher"
+                            android:id="@+id/pm25_image_view"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -87,22 +81,19 @@
                             android:paddingRight="5dp"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp"/>
-
                     </LinearLayout>
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
-
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:gravity="center_horizontal"
-                            android:src="@mipmap/ic_launcher"/>
-
+                            android:src="@mipmap/ic_launcher"
+                            android:id="@+id/pm10_image_view"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -114,22 +105,19 @@
                             android:paddingRight="5dp"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp"/>
-
                     </LinearLayout>
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
-
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:gravity="center_horizontal"
-                            android:src="@mipmap/ic_launcher"/>
-
+                            android:src="@mipmap/ic_launcher"
+                            android:id="@+id/o3_image_view"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -141,7 +129,6 @@
                             android:paddingRight="5dp"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp"/>
-
                     </LinearLayout>
 
                 </LinearLayout>
@@ -158,14 +145,12 @@
                 android:layout_marginTop="5dp"
                 android:background="#DFDFDF"
                 android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="horizontal"
                     android:padding="5dp">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -175,25 +160,25 @@
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"/>
-
                     <View
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"/>
                 </LinearLayout>
-
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/ic_launcher"
+                    android:id="@+id/tomorrow_image_view"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="(Index Level Text Here)"
+                    android:id="@+id/level_text_view"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:paddingTop="20dp"
@@ -204,17 +189,14 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="(Description Here)"
+                    android:id="@+id/description_text_view"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"/>
-
             </LinearLayout>
 
-
-
         </LinearLayout>
-
 
     </ScrollView>
 </LinearLayout>

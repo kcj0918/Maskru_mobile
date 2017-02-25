@@ -1,57 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_home"
-    android:onClick="keyHide"
-    android:background="@color/color_white"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.yapp.maskru_mobile_project.HomeActivity">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:orientation="vertical">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/dust_detail"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:textColor="@color/color_sky_blue"
-            android:text="@string/dust_detail"
-            android:textSize="15dp"
-            android:background="@drawable/dust_detail_button"
-            android:layout_weight="2"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"/>
-    </LinearLayout>
-    <View
-        android:background="@color/color_sky_blue"
-        android:layout_weight="2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="2"
-    android:orientation="vertical">
+            //카드1
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#DFDFDF"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Mask Index"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"/>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Date"
+                        android:id="@+id/dateNow"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:src="@mipmap/ic_launcher"
+                    android:id="@+id/level_image"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="(Index Level Text Here)"
+                    android:id="@+id/today_level_text_view"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="(Description Here)"
+                    android:id="@+id/description_text_view"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"/>
+                <Button
+                    android:id="@+id/detail_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Current details and forecast"
+                    android:background="#F1F1F1"
+                    android:drawableRight="@mipmap/ic_launcher"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"/>
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/mask_map"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:textColor="@color/color_sky_blue"
-        android:background="@drawable/mask_map_button"
-        android:textSize="15dp"
-        android:text="@string/mask_map"
-        android:layout_weight="2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp" />
+            <Button
+                android:id="@+id/map_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#F1F1F1"
+                android:drawableRight="@mipmap/ic_launcher"
+                android:text="mask map"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:id="@+id/guide_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#F1F1F1"
+                android:text="Guide"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:id="@+id/dust_data1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15sp"/>
+            //초미세먼지 수치
+
+            <TextView
+                android:id="@+id/dust_data2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15sp"/>
+            //미세먼지 수치 안나옴
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Disposable face masks are enough for sensitive groups"
+                android:textSize="12sp"/>
 
 
-</LinearLayout>
 
 
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
