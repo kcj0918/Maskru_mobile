@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.yapp.maskru_mobile_project"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -27,4 +27,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'
     testCompile 'junit:junit:4.12'
+    compile 'com.naver.maps.open:naver-map-api:2.1.2@aar'
 }

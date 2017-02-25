@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yapp.maskru_mobile_project">
+    package="com.yapp.maskru_mobile_project"
+    android:versionCode="212"
+    android:versionName="2.1.2">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <!-- 반드시 추가 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 위치정보활용시 추가 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 위치정보활용시 추가 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- WIFI 상태활용시 추가 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- WIFI 상태활용시 추가 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -17,14 +38,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".DustDetailActivity">
-        </activity>
-        <activity
-            android:name=".MaskMapActivity"
-            android:label="@string/title_activity_mask_map"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+        <activity android:name=".DustDetailActivity"></activity>
+        <activity android:name=".MaskMapActivity"></activity>
     </application>
 
 </manifest>
